@@ -239,7 +239,7 @@ function sidebar() {
                 </a>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="pages/forms/general.html" className="nav-link">
+                    <a href="pages/forms/General.js" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>General Elements</p>
                     </a>

@@ -4,6 +4,7 @@ import Header from './componet/Header';
 import Sidebar from './componet/Sidebar';
 import Deshboard from './componet/Deshboard';
 import Login from './componet/Login';
+import General from './componet/General';
 import { Routes, Route } from "react-router-dom"
 
 function App() {
@@ -13,7 +14,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Deshboard />} />
         <Route path="login" element={<Login />} />
+        <Route path="/General" element={<General />} />
       </Routes>
+      <General />
       {/* <Sidebar /> */}
     </>
   );
