@@ -1,10 +1,12 @@
 import React from 'react'
 import Footer from './Footer'
+import Header from './Header'
 import Sidebar from './Sidebar'
 function Deshboard() {
   return (
 
     <div>
+      <Header />
       <Sidebar />
       {/* Content Wrapper. Contains page content */}
       <div className="content-wrapper">
@@ -17,7 +19,7 @@ function Deshboard() {
               </div>{/* /.col */}
               <div className="col-sm-6">
                 <ol className="breadcrumb float-sm-right">
-                  <li className="breadcrumb-item"><a href="">Home</a></li>
+                  <li className="breadcrumb-item"><a href="../../index2.html">Home</a></li>
                   <li className="breadcrumb-item active">Dashboard v1</li>
                 </ol>
               </div>{/* /.col */}

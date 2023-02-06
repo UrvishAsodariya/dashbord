@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function sidebar() {
   return (
@@ -47,7 +48,7 @@ function sidebar() {
                 </a>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="./index.html" className="nav-link active">
+                    <a href="" className="nav-link active">
                       <i className="far fa-circle nav-icon" />
                       <p>Dashboard v1</p>
                     </a>
@@ -239,10 +240,10 @@ function sidebar() {
                 </a>
                 <ul className="nav nav-treeview">
                   <li className="nav-item">
-                    <a href="pages/forms/General.js" className="nav-link">
+                    <Link to="General" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>General Elements</p>
-                    </a>
+                    </Link>
                   </li>
                   <li className="nav-item">
                     <a href="pages/forms/advanced.html" className="nav-link">
@@ -464,13 +465,13 @@ function sidebar() {
                     </ul>
                   </li>
                   <li className="nav-item">
-                    <a href="#" className="nav-link">
+                    <Link to="Register.js" className="nav-link">
                       <i className="far fa-circle nav-icon" />
                       <p>
                         Login &amp; Register v2
                         <i className="fas fa-angle-left right" />
                       </p>
-                    </a>
+                    </Link>
                     <ul className="nav nav-treeview">
                       <li className="nav-item">
                         <a href="pages/examples/login-v2.html" className="nav-link">

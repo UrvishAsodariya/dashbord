@@ -10,13 +10,13 @@ import { Routes, Route } from "react-router-dom"
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Routes>
-        <Route path="/" element={<Deshboard />} />
-        <Route path="login" element={<Login />} />
-        <Route path="/General" element={<General />} />
+        <Route path="/" element={<Login />} />
+        <Route path="/Deshboard" element={<Deshboard />} />
+        <Route path="/Deshboard/General" element={<General />} />
+        {/* <Route path='/Sidebar' element={<Sidebar />} /> */}
       </Routes>
-      <General />
       {/* <Sidebar /> */}
     </>
   );

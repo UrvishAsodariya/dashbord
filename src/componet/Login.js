@@ -1,12 +1,41 @@
-import React from 'react'
+// import React, { useState } from 'react'
 import Footer from './Footer';
-import { Link, Routes, Route } from "react-router-dom";
+import { Link } from "react-router-dom";
+import axios from 'axios';
+import { useState, React } from 'react';
+
+const Login = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const btn = () => {
+        axios.post('http://localhost/work/insert.php', {
+            email,
+            password,
+        })
+            .then(function (response) {
+                // handle success
+                console.log(response);
+                if ((response.data.Email == email) && (response.data.Password == password)) {
+                    alert('Your data is currected...!')
+                    window.localStorage.setItem('id', response.data.id)
+                    window.location.href = '/Deshboard'
+                }
+                else {
+                    alert('Please, Check your data...!')
+                }
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+    }
+  
 
 
 
-function Login() {
     return (
         <>
+
             <div className='d-flex justify-content-center align-items-center'>
                 <div className="login-box">
                     <div className="login-logo">
@@ -16,9 +45,9 @@ function Login() {
                     <div className="card">
                         <div className="card-body login-card-body">
                             <p className="login-box-msg">Sign in to start your session</p>
-                            <form action="../../index3.html" method="post">
+                            <form method="post">
                                 <div className="input-group mb-3">
-                                    <input type="email" className="form-control" placeholder="Email" />
+                                    <input type="email" className="form-control" placeholder="Email" onChange={e => { setEmail(e.target.value) }} />
                                     <div className="input-group-append">
                                         <div className="input-group-text">
                                             <span className="fas fa-envelope" />
@@ -26,7 +55,7 @@ function Login() {
                                     </div>
                                 </div>
                                 <div className="input-group mb-3">
-                                    <input type="password" className="form-control" placeholder="Password" />
+                                    <input type="password" className="form-control" placeholder="Password" onChange={e => { setPassword(e.target.value) }} />
                                     <div className="input-group-append">
                                         <div className="input-group-text">
                                             <span className="fas fa-lock" />
@@ -44,7 +73,7 @@ function Login() {
                                     </div>
                                     {/* /.col */}
                                     <div className="col-4">
-                                        <button type="submit" className="btn btn-primary btn-block">Sign In</button>
+                                       <button type="submit" className="btn btn-primary btn-block" onClick={btn}>Sign In</button>
                                     </div>
                                     {/* /.col */}
                                 </div>
@@ -71,7 +100,7 @@ function Login() {
                 </div>
                 {/* /.login-box */}
             </div>
-            <Footer />
+            {/* <Footer /> */}
         </>
     )
 }
